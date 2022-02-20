@@ -45,12 +45,12 @@ testing_set = testing_function.flow_from_directory(
     batch_size=20,
     class_mode='binary')
 # class is kept binary as the program will decide between mask and no mask
-model_saved = model.fit_generator(
-    training_set,
-    epochs=20,
-    validation_data=testing_set,
-)
-model.save('maskdetection.h5', model_saved)
+# model_saved = model.fit_generator(
+#     training_set,
+#     epochs=20,
+#     validation_data=testing_set,
+# )
+# model.save('maskdetection.h5', model_saved)
 training_model = load_model('maskdetection.h5')
 sample_image = image.load_img(r'D:\Downloads\FaceMaskDetector-master\FaceMaskDetector-master\test\with_mask\1-with-mask.jpg',
                               target_size=(150, 150, 3))
